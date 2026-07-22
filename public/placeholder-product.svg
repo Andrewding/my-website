@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+<defs>
+<radialGradient id="g" cx="50%" cy="42%" r="65%">
+<stop offset="0%" stop-color="#FF6B35" stop-opacity="0.3"/>
+<stop offset="100%" stop-color="#FF6B35" stop-opacity="0"/>
+</radialGradient>
+</defs>
+<rect width="500" height="500" fill="#1E232B"/>
+<circle cx="250" cy="220" r="180" fill="url(#g)"/>
+<circle cx="250" cy="220" r="60" fill="none" stroke="#FF6B35" stroke-width="5"/>
+<line x1="250" y1="220" x2="250" y2="170" stroke="#FF6B35" stroke-width="5" stroke-linecap="round"/>
+<circle cx="250" cy="220" r="7" fill="#4FD1C5"/>
+<text x="250" y="400" font-family="Arial" font-size="16" fill="#9AA3AE" text-anchor="middle">No image yet</text>
+</svg>
