@@ -1,0 +1,354 @@
+{
+  "categories": [
+    { "id": "heated-belts", "name": "Heated Belts", "description": "Targeted warmth and vibration massage for lower back and abdominal comfort." },
+    { "id": "heated-socks", "name": "Heated Socks", "description": "Rechargeable warm socks with adjustable heat zones for cold feet, indoors or outdoors." },
+    { "id": "heated-gloves", "name": "Heated Gloves", "description": "Flexible heated gloves with vibration massage for hands and joints." }
+  ],
+  "products": [
+    {
+      "id": "hb-001",
+      "sku": "HB-001",
+      "category": "heated-belts",
+      "title": "[Product Title Placeholder] Heated Waist Belt with Vibration Massage",
+      "shortDescription": "[Short description placeholder - paste Amazon bullet summary here]",
+      "price": 39.99,
+      "currency": "USD",
+      "image": "assets/images/products/hb-001-main.svg",
+      "gallery": [
+        "assets/images/products/hb-001-main.svg",
+        "assets/images/products/hb-001-alt1.svg",
+        "assets/images/products/hb-001-alt2.svg"
+      ],
+      "video": "",
+      "features": [
+        "[Feature bullet 1 placeholder - e.g. 3 adjustable heat levels]",
+        "[Feature bullet 2 placeholder - e.g. dual-motor vibration massage]",
+        "[Feature bullet 3 placeholder - e.g. USB rechargeable battery]",
+        "[Feature bullet 4 placeholder - e.g. adjustable strap fits most waist sizes]"
+      ],
+      "description": "[Full long description placeholder. Paste the complete Amazon product description here, including use cases, materials, and care instructions.]",
+      "specs": {
+        "material": "[Material placeholder]",
+        "voltage": "[Voltage placeholder, e.g. 5V]",
+        "batteryGear": "[Battery gear placeholder, e.g. 3-speed heat / 3-speed vibration]",
+        "size": "[Size placeholder]",
+        "weight": "[Weight placeholder]"
+      },
+      "functions": { "temperature": true, "vibration": true, "heatingDisplay": true },
+      "colors": ["Black", "Grey"],
+      "sizes": ["S/M", "L/XL"],
+      "models": ["Standard"],
+      "faqs": [
+        { "q": "[FAQ question placeholder]", "a": "[FAQ answer placeholder]" },
+        { "q": "[FAQ question placeholder]", "a": "[FAQ answer placeholder]" }
+      ],
+      "tags": ["heating", "vibration", "back-support"],
+      "bestSeller": true,
+      "newArrival": false
+    },
+    {
+      "id": "hb-002",
+      "sku": "HB-002",
+      "category": "heated-belts",
+      "title": "[Product Title Placeholder] Slim Heated Abdominal Belt",
+      "shortDescription": "[Short description placeholder]",
+      "price": 34.99,
+      "currency": "USD",
+      "image": "assets/images/products/hb-002-main.svg",
+      "gallery": [
+        "assets/images/products/hb-002-main.svg",
+        "assets/images/products/hb-002-alt1.svg"
+      ],
+      "video": "",
+      "features": [
+        "[Feature bullet 1 placeholder]",
+        "[Feature bullet 2 placeholder]",
+        "[Feature bullet 3 placeholder]"
+      ],
+      "description": "[Full long description placeholder.]",
+      "specs": {
+        "material": "[Material placeholder]",
+        "voltage": "[Voltage placeholder]",
+        "batteryGear": "[Battery gear placeholder]",
+        "size": "[Size placeholder]",
+        "weight": "[Weight placeholder]"
+      },
+      "functions": { "temperature": true, "vibration": false, "heatingDisplay": true },
+      "colors": ["Black"],
+      "sizes": ["One Size"],
+      "models": ["Standard"],
+      "faqs": [
+        { "q": "[FAQ question placeholder]", "a": "[FAQ answer placeholder]" }
+      ],
+      "tags": ["heating", "abdominal"],
+      "bestSeller": false,
+      "newArrival": true
+    },
+    {
+      "id": "hb-003",
+      "sku": "HB-003",
+      "category": "heated-belts",
+      "title": "[Product Title Placeholder] Heated Massage Belt with Remote Control",
+      "shortDescription": "[Short description placeholder]",
+      "price": 44.99,
+      "currency": "USD",
+      "image": "assets/images/products/hb-003-main.svg",
+      "gallery": [
+        "assets/images/products/hb-003-main.svg",
+        "assets/images/products/hb-003-alt1.svg"
+      ],
+      "video": "",
+      "features": [
+        "[Feature bullet 1 placeholder]",
+        "[Feature bullet 2 placeholder]",
+        "[Feature bullet 3 placeholder]"
+      ],
+      "description": "[Full long description placeholder.]",
+      "specs": {
+        "material": "[Material placeholder]",
+        "voltage": "[Voltage placeholder]",
+        "batteryGear": "[Battery gear placeholder]",
+        "size": "[Size placeholder]",
+        "weight": "[Weight placeholder]"
+      },
+      "functions": { "temperature": true, "vibration": true, "heatingDisplay": true },
+      "colors": ["Black", "Navy"],
+      "sizes": ["S/M", "L/XL"],
+      "models": ["With Remote"],
+      "faqs": [
+        { "q": "[FAQ question placeholder]", "a": "[FAQ answer placeholder]" }
+      ],
+      "tags": ["heating", "vibration", "remote-control"],
+      "bestSeller": true,
+      "newArrival": false
+    },
+    {
+      "id": "hs-001",
+      "sku": "HS-001",
+      "category": "heated-socks",
+      "title": "[Product Title Placeholder] Rechargeable Heated Socks",
+      "shortDescription": "[Short description placeholder]",
+      "price": 29.99,
+      "currency": "USD",
+      "image": "assets/images/products/hs-001-main.svg",
+      "gallery": [
+        "assets/images/products/hs-001-main.svg",
+        "assets/images/products/hs-001-alt1.svg"
+      ],
+      "video": "",
+      "features": [
+        "[Feature bullet 1 placeholder]",
+        "[Feature bullet 2 placeholder]",
+        "[Feature bullet 3 placeholder]"
+      ],
+      "description": "[Full long description placeholder.]",
+      "specs": {
+        "material": "[Material placeholder]",
+        "voltage": "[Voltage placeholder]",
+        "batteryGear": "[Battery gear placeholder]",
+        "size": "[Size placeholder, e.g. US 6-12]",
+        "weight": "[Weight placeholder]"
+      },
+      "functions": { "temperature": true, "vibration": false, "heatingDisplay": true },
+      "colors": ["Black", "Grey"],
+      "sizes": ["S", "M", "L"],
+      "models": ["Standard"],
+      "faqs": [
+        { "q": "[FAQ question placeholder]", "a": "[FAQ answer placeholder]" }
+      ],
+      "tags": ["heating", "socks", "outdoor"],
+      "bestSeller": true,
+      "newArrival": false
+    },
+    {
+      "id": "hs-002",
+      "sku": "HS-002",
+      "category": "heated-socks",
+      "title": "[Product Title Placeholder] Cotton Blend Heated Socks with 3 Heat Zones",
+      "shortDescription": "[Short description placeholder]",
+      "price": 32.99,
+      "currency": "USD",
+      "image": "assets/images/products/hs-002-main.svg",
+      "gallery": [
+        "assets/images/products/hs-002-main.svg",
+        "assets/images/products/hs-002-alt1.svg"
+      ],
+      "video": "",
+      "features": [
+        "[Feature bullet 1 placeholder]",
+        "[Feature bullet 2 placeholder]",
+        "[Feature bullet 3 placeholder]"
+      ],
+      "description": "[Full long description placeholder.]",
+      "specs": {
+        "material": "[Material placeholder]",
+        "voltage": "[Voltage placeholder]",
+        "batteryGear": "[Battery gear placeholder]",
+        "size": "[Size placeholder]",
+        "weight": "[Weight placeholder]"
+      },
+      "functions": { "temperature": true, "vibration": false, "heatingDisplay": true },
+      "colors": ["Black"],
+      "sizes": ["M", "L"],
+      "models": ["Standard"],
+      "faqs": [
+        { "q": "[FAQ question placeholder]", "a": "[FAQ answer placeholder]" }
+      ],
+      "tags": ["heating", "socks", "winter"],
+      "bestSeller": false,
+      "newArrival": true
+    },
+    {
+      "id": "hs-003",
+      "sku": "HS-003",
+      "category": "heated-socks",
+      "title": "[Product Title Placeholder] Heated Ski Socks Waterproof",
+      "shortDescription": "[Short description placeholder]",
+      "price": 36.99,
+      "currency": "USD",
+      "image": "assets/images/products/hs-003-main.svg",
+      "gallery": [
+        "assets/images/products/hs-003-main.svg",
+        "assets/images/products/hs-003-alt1.svg"
+      ],
+      "video": "",
+      "features": [
+        "[Feature bullet 1 placeholder]",
+        "[Feature bullet 2 placeholder]",
+        "[Feature bullet 3 placeholder]"
+      ],
+      "description": "[Full long description placeholder.]",
+      "specs": {
+        "material": "[Material placeholder]",
+        "voltage": "[Voltage placeholder]",
+        "batteryGear": "[Battery gear placeholder]",
+        "size": "[Size placeholder]",
+        "weight": "[Weight placeholder]"
+      },
+      "functions": { "temperature": true, "vibration": false, "heatingDisplay": true },
+      "colors": ["Black", "Camo"],
+      "sizes": ["M", "L", "XL"],
+      "models": ["Waterproof"],
+      "faqs": [
+        { "q": "[FAQ question placeholder]", "a": "[FAQ answer placeholder]" }
+      ],
+      "tags": ["heating", "socks", "waterproof", "ski"],
+      "bestSeller": false,
+      "newArrival": false
+    },
+    {
+      "id": "hg-001",
+      "sku": "HG-001",
+      "category": "heated-gloves",
+      "title": "[Product Title Placeholder] Heated Massage Gloves for Arthritis",
+      "shortDescription": "[Short description placeholder]",
+      "price": 27.99,
+      "currency": "USD",
+      "image": "assets/images/products/hg-001-main.svg",
+      "gallery": [
+        "assets/images/products/hg-001-main.svg",
+        "assets/images/products/hg-001-alt1.svg"
+      ],
+      "video": "",
+      "features": [
+        "[Feature bullet 1 placeholder]",
+        "[Feature bullet 2 placeholder]",
+        "[Feature bullet 3 placeholder]"
+      ],
+      "description": "[Full long description placeholder.]",
+      "specs": {
+        "material": "[Material placeholder]",
+        "voltage": "[Voltage placeholder]",
+        "batteryGear": "[Battery gear placeholder]",
+        "size": "[Size placeholder]",
+        "weight": "[Weight placeholder]"
+      },
+      "functions": { "temperature": true, "vibration": true, "heatingDisplay": true },
+      "colors": ["Black"],
+      "sizes": ["S/M", "L/XL"],
+      "models": ["Standard"],
+      "faqs": [
+        { "q": "[FAQ question placeholder]", "a": "[FAQ answer placeholder]" }
+      ],
+      "tags": ["heating", "vibration", "gloves", "hand-care"],
+      "bestSeller": true,
+      "newArrival": true
+    },
+    {
+      "id": "hg-002",
+      "sku": "HG-002",
+      "category": "heated-gloves",
+      "title": "[Product Title Placeholder] Touchscreen Heated Gloves",
+      "shortDescription": "[Short description placeholder]",
+      "price": 24.99,
+      "currency": "USD",
+      "image": "assets/images/products/hg-002-main.svg",
+      "gallery": [
+        "assets/images/products/hg-002-main.svg",
+        "assets/images/products/hg-002-alt1.svg"
+      ],
+      "video": "",
+      "features": [
+        "[Feature bullet 1 placeholder]",
+        "[Feature bullet 2 placeholder]",
+        "[Feature bullet 3 placeholder]"
+      ],
+      "description": "[Full long description placeholder.]",
+      "specs": {
+        "material": "[Material placeholder]",
+        "voltage": "[Voltage placeholder]",
+        "batteryGear": "[Battery gear placeholder]",
+        "size": "[Size placeholder]",
+        "weight": "[Weight placeholder]"
+      },
+      "functions": { "temperature": true, "vibration": false, "heatingDisplay": true },
+      "colors": ["Black", "Grey"],
+      "sizes": ["M", "L"],
+      "models": ["Touchscreen"],
+      "faqs": [
+        { "q": "[FAQ question placeholder]", "a": "[FAQ answer placeholder]" }
+      ],
+      "tags": ["heating", "gloves", "outdoor"],
+      "bestSeller": false,
+      "newArrival": false
+    },
+    {
+      "id": "hg-003",
+      "sku": "HG-003",
+      "category": "heated-gloves",
+      "title": "[Product Title Placeholder] Rechargeable Vibration Massage Gloves",
+      "shortDescription": "[Short description placeholder]",
+      "price": 31.99,
+      "currency": "USD",
+      "image": "assets/images/products/hg-003-main.svg",
+      "gallery": [
+        "assets/images/products/hg-003-main.svg",
+        "assets/images/products/hg-003-alt1.svg"
+      ],
+      "video": "",
+      "features": [
+        "[Feature bullet 1 placeholder]",
+        "[Feature bullet 2 placeholder]",
+        "[Feature bullet 3 placeholder]"
+      ],
+      "description": "[Full long description placeholder.]",
+      "specs": {
+        "material": "[Material placeholder]",
+        "voltage": "[Voltage placeholder]",
+        "batteryGear": "[Battery gear placeholder]",
+        "size": "[Size placeholder]",
+        "weight": "[Weight placeholder]"
+      },
+      "functions": { "temperature": true, "vibration": true, "heatingDisplay": true },
+      "colors": ["Black"],
+      "sizes": ["One Size"],
+      "models": ["Standard"],
+      "faqs": [
+        { "q": "[FAQ question placeholder]", "a": "[FAQ answer placeholder]" }
+      ],
+      "tags": ["heating", "vibration", "gloves"],
+      "bestSeller": false,
+      "newArrival": true
+    }
+  ]
+}

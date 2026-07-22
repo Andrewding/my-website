@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Detail — ThermalWear</title>
+<meta name="description" content="Product detail — heated massage wearable with adjustable temperature and vibration massage.">
+<link rel="icon" href="assets/images/brand/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container-page flex items-center justify-between py-4">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <img src="assets/images/brand/logo.svg" alt="ThermalWear logo" width="32" height="32">
+      <span class="font-display font-semibold text-lg tracking-tight">ThermalWear</span>
+    </a>
+    <nav id="nav-menu" class="hidden md:flex items-center gap-7">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="products.html" class="nav-link active">All Products</a>
+      <a href="products.html?category=heated-belts" class="nav-link">Belts</a>
+      <a href="products.html?category=heated-socks" class="nav-link">Socks</a>
+      <a href="products.html?category=heated-gloves" class="nav-link">Gloves</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <form data-site-search class="hidden sm:flex items-center gap-2">
+        <input type="search" placeholder="Search products…" class="field" style="width:180px;padding:0.45rem 0.75rem;font-size:0.85rem;" aria-label="Search products">
+      </form>
+      <a href="history.html" class="btn-ghost text-sm hidden sm:inline-flex">History</a>
+      <button id="nav-toggle" class="md:hidden btn-ghost" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="product-detail-root" class="container-page py-10">
+
+  <p class="text-sm text-muted mb-6">
+    <a href="index.html" class="hover:accent">Home</a> /
+    <a href="products.html" class="hover:accent">All Products</a> /
+    <span id="pd-category">Category</span>
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-10">
+    <!-- Gallery -->
+    <div>
+      <div class="surface overflow-hidden mb-3">
+        <img id="pd-main-image" src="" alt="" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;">
+      </div>
+      <div id="pd-thumbnails" class="flex gap-2"></div>
+      <div id="pd-video" class="mt-4"></div>
+    </div>
+
+    <!-- Info -->
+    <div>
+      <h1 id="pd-title" class="font-display text-2xl md:text-3xl font-semibold mb-2">Loading…</h1>
+      <p class="text-xs text-muted mb-4">SKU: <span id="pd-sku"></span></p>
+      <p id="pd-price" class="text-2xl accent font-semibold font-display mb-4"></p>
+
+      <div id="pd-function-tags" class="flex flex-wrap gap-2 mb-6"></div>
+
+      <ul id="pd-features" class="space-y-2 mb-6 text-sm"></ul>
+
+      <div class="pd-variant-row mb-4">
+        <p class="text-xs text-muted mb-2">Color</p>
+        <div id="pd-colors" class="flex flex-wrap gap-2"></div>
+      </div>
+      <div class="pd-variant-row mb-4">
+        <p class="text-xs text-muted mb-2">Size</p>
+        <div id="pd-sizes" class="flex flex-wrap gap-2"></div>
+      </div>
+      <div class="pd-variant-row mb-6">
+        <p class="text-xs text-muted mb-2">Model</p>
+        <div id="pd-models" class="flex flex-wrap gap-2"></div>
+      </div>
+
+      <div class="flex gap-3">
+        <a href="contact.html" class="btn btn-primary flex-1 text-center">Ask About This Product</a>
+        <a href="products.html" class="btn btn-outline flex-1 text-center">Back to Catalog</a>
+      </div>
+      <p class="text-xs text-muted mt-3">This display site does not process orders yet. To purchase, visit our Amazon storefront (link reserved for future update).</p>
+    </div>
+  </div>
+
+  <!-- Description -->
+  <section class="mt-16 grid md:grid-cols-[2fr_1fr] gap-10">
+    <div>
+      <h2 class="font-display text-xl font-semibold mb-4">Product Description</h2>
+      <p id="pd-description" class="text-muted leading-relaxed mb-10"></p>
+
+      <h2 class="font-display text-xl font-semibold mb-4">Specifications</h2>
+      <table class="w-full text-sm mb-10"><tbody id="pd-specs"></tbody></table>
+
+      <h2 class="font-display text-xl font-semibold mb-4">Frequently Asked Questions</h2>
+      <div id="pd-faqs" class="space-y-3 mb-10"></div>
+
+      <h2 class="font-display text-xl font-semibold mb-4">Customer Reviews</h2>
+      <div id="pd-reviews"></div>
+    </div>
+
+    <aside data-history-section class="hidden">
+      <h3 class="font-display text-sm font-semibold mb-4">You Recently Viewed</h3>
+      <div id="recently-viewed-rail" class="flex md:flex-col gap-4 overflow-x-auto rail"></div>
+    </aside>
+  </section>
+
+  <!-- Related -->
+  <section class="mt-16">
+    <h2 class="font-display text-xl font-semibold mb-6">You May Also Like</h2>
+    <div id="pd-related-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
+  </section>
+
+</main>
+
+<footer style="border-top:1px solid var(--color-line);">
+  <div class="container-page py-12 grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+    <div>
+      <a href="index.html" class="flex items-center gap-2.5 mb-3">
+        <img src="assets/images/brand/logo.svg" alt="ThermalWear logo" width="28" height="28">
+        <span class="font-display font-semibold">ThermalWear</span>
+      </a>
+      <p class="text-muted text-sm">Heated massage wearables for everyday comfort.</p>
+    </div>
+    <div>
+      <h4 class="font-display text-sm font-semibold mb-3">Shop</h4>
+      <ul class="space-y-2 text-sm text-muted">
+        <li><a href="products.html?category=heated-belts">Heated Belts</a></li>
+        <li><a href="products.html?category=heated-socks">Heated Socks</a></li>
+        <li><a href="products.html?category=heated-gloves">Heated Gloves</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display text-sm font-semibold mb-3">Company</h4>
+      <ul class="space-y-2 text-sm text-muted">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="shipping.html">Shipping Policy</a></li>
+        <li><a href="return.html">Return &amp; Refund Policy</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display text-sm font-semibold mb-3">Contact</h4>
+      <p class="text-muted text-sm">support@thermalwear-example.com</p>
+    </div>
+  </div>
+  <div class="container-page py-6 text-xs text-muted" style="border-top:1px solid var(--color-line);">
+    © <span data-year></span> ThermalWear. All rights reserved.
+  </div>
+</footer>
+
+<div id="cookie-banner" class="hidden">
+  <div class="container-page py-4 flex flex-col sm:flex-row items-center gap-4">
+    <p class="text-sm text-muted flex-1">We use cookies to remember your browsing history and improve your experience. Read our <a href="privacy.html" class="accent underline">Privacy Policy</a>. We only start tracking after you accept.</p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookie-decline" class="btn btn-outline text-sm">Decline</button>
+      <button id="cookie-accept" class="btn btn-primary text-sm">Accept</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/products.js"></script>
+</body>
+</html>

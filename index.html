@@ -1,67 +1,238 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>实时时间显示</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #f4f6f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-        .clock-card {
-            background: #ffffff;
-            padding: 40px 60px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            text-align: center;
-        }
-        h1 {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-        .clock-container {
-            font-size: 2.5rem;
-            color: #1a1a1a;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThermalWear — Heated Massage Wearables</title>
+<meta name="description" content="ThermalWear designs heated belts, heated socks and heated gloves with adjustable temperature and vibration massage — engineered for cold days and tired muscles.">
+<link rel="icon" href="assets/images/brand/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <div class="clock-card">
-        <h1>当前北京时间</h1>
-        <div class="clock-container" id="digital-clock">
-            加载中...
-        </div>
+<!-- ============ Header ============ -->
+<header class="site-header">
+  <div class="container-page flex items-center justify-between py-4">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <img src="assets/images/brand/logo.svg" alt="ThermalWear logo" width="32" height="32">
+      <span class="font-display font-semibold text-lg tracking-tight">ThermalWear</span>
+    </a>
+    <nav id="nav-menu" class="hidden md:flex items-center gap-7">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="products.html" class="nav-link">All Products</a>
+      <a href="products.html?category=heated-belts" class="nav-link">Belts</a>
+      <a href="products.html?category=heated-socks" class="nav-link">Socks</a>
+      <a href="products.html?category=heated-gloves" class="nav-link">Gloves</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="contact.html" class="nav-link">Contact Us</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <form data-site-search class="hidden sm:flex items-center gap-2">
+        <input type="search" placeholder="Search products…" class="field" style="width:180px;padding:0.45rem 0.75rem;font-size:0.85rem;" aria-label="Search products">
+      </form>
+      <a href="history.html" class="btn-ghost text-sm hidden sm:inline-flex" title="Recently viewed">History</a>
+      <button id="nav-toggle" class="md:hidden btn-ghost" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
+  </div>
+</header>
 
-    <script>
-        function updateClock() {
-            const now = new Date();
-            
-            const year = now.getFullYear();
-            const month = String(now.getMonth() + 1).padStart(2, '0');
-            const day = String(now.getDate()).padStart(2, '0');
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            
-            const timeString = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-            document.getElementById('digital-clock').innerText = timeString;
-        }
+<main>
 
-        updateClock();
-        setInterval(updateClock, 1000);
-    </script>
+  <!-- ============ Hero carousel ============ -->
+  <section class="container-page pt-6 md:pt-10">
+    <div class="carousel surface">
+      <div class="carousel-track" id="hero-track">
+        <div class="carousel-slide"><img src="assets/images/brand/hero-1.svg" alt="New arrivals — warmth that moves with you" style="width:100%;display:block;"></div>
+        <div class="carousel-slide"><img src="assets/images/brand/hero-2.svg" alt="Best sellers — heat, massage, recharge" style="width:100%;display:block;"></div>
+        <div class="carousel-slide"><img src="assets/images/brand/hero-3.svg" alt="All products — built for cold days and tired muscles" style="width:100%;display:block;"></div>
+      </div>
+      <div class="absolute inset-x-0 flex justify-center gap-2" style="bottom:1rem;position:absolute;" id="hero-dots"></div>
+    </div>
+  </section>
 
+  <!-- ============ Category quick entry ============ -->
+  <section class="container-page py-14">
+    <div class="flex items-end justify-between mb-6">
+      <div>
+        <p class="eyebrow mb-2">Shop by category</p>
+        <h2 class="font-display text-2xl md:text-3xl font-semibold">Find your warmth</h2>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <a data-category-link="heated-belts" href="#" class="surface p-6 flex items-center gap-4" style="transition:border-color .2s;">
+        <span class="dial" style="--dial-size:44px;"></span>
+        <div>
+          <h3 class="font-display font-semibold">Heated Belts</h3>
+          <p class="text-muted text-sm">Lower back & abdominal warmth</p>
+        </div>
+      </a>
+      <a data-category-link="heated-socks" href="#" class="surface p-6 flex items-center gap-4">
+        <span class="dial" style="--dial-size:44px;"></span>
+        <div>
+          <h3 class="font-display font-semibold">Heated Socks</h3>
+          <p class="text-muted text-sm">Rechargeable warm feet, indoors & out</p>
+        </div>
+      </a>
+      <a data-category-link="heated-gloves" href="#" class="surface p-6 flex items-center gap-4">
+        <span class="dial" style="--dial-size:44px;"></span>
+        <div>
+          <h3 class="font-display font-semibold">Heated Gloves</h3>
+          <p class="text-muted text-sm">Flexible warmth & massage for hands</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ Best sellers ============ -->
+  <section class="container-page py-10">
+    <div class="flex items-end justify-between mb-6">
+      <div>
+        <p class="eyebrow mb-2">Customer favorites</p>
+        <h2 class="font-display text-2xl md:text-3xl font-semibold">Best-selling warmth</h2>
+      </div>
+      <a href="products.html" class="btn btn-outline text-sm hidden sm:inline-flex">View all products</a>
+    </div>
+    <div id="best-sellers-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="product-card"><div class="product-card__media skeleton"></div></div>
+      <div class="product-card"><div class="product-card__media skeleton"></div></div>
+      <div class="product-card"><div class="product-card__media skeleton"></div></div>
+      <div class="product-card"><div class="product-card__media skeleton"></div></div>
+    </div>
+  </section>
+
+  <!-- ============ Recently viewed ============ -->
+  <section class="container-page py-10 hidden" data-history-section>
+    <div class="flex items-end justify-between mb-6">
+      <div>
+        <p class="eyebrow mb-2">Pick up where you left off</p>
+        <h2 class="font-display text-2xl md:text-3xl font-semibold">You Recently Viewed</h2>
+      </div>
+      <a href="history.html" class="btn btn-ghost text-sm">See all &amp; manage</a>
+    </div>
+    <div id="recently-viewed-rail" class="flex gap-4 overflow-x-auto rail pb-2"></div>
+  </section>
+
+  <!-- ============ Brand introduction ============ -->
+  <section class="py-16" style="background:var(--color-surface);border-top:1px solid var(--color-line);border-bottom:1px solid var(--color-line);">
+    <div class="container-page grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="eyebrow mb-3">Why ThermalWear</p>
+        <h2 class="font-display text-2xl md:text-3xl font-semibold mb-4">Three controls. One idea: comfort on demand.</h2>
+        <p class="text-muted mb-6">Every ThermalWear piece is built around the same core interface — a temperature button, a vibration massage button, and a clear heating / massage display — so warmth and relief are always one press away, wherever the cold or the ache shows up.</p>
+        <a href="about.html" class="btn btn-outline">More about our brand</a>
+      </div>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="surface p-5 text-center">
+          <span class="dial mx-auto mb-3" style="--dial-size:40px;"></span>
+          <p class="text-sm font-medium font-display">Temperature Button</p>
+          <p class="text-xs text-muted mt-1">Adjustable heat levels</p>
+        </div>
+        <div class="surface p-5 text-center">
+          <span class="dial mx-auto mb-3" style="--dial-size:40px;"></span>
+          <p class="text-sm font-medium font-display">Vibration Massage</p>
+          <p class="text-xs text-muted mt-1">Multi-speed relief</p>
+        </div>
+        <div class="surface p-5 text-center">
+          <span class="dial mx-auto mb-3" style="--dial-size:40px;"></span>
+          <p class="text-sm font-medium font-display">Live Display</p>
+          <p class="text-xs text-muted mt-1">Heat & massage status</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ New arrivals ============ -->
+  <section class="container-page py-14">
+    <div class="flex items-end justify-between mb-6">
+      <div>
+        <p class="eyebrow mb-2">Just landed</p>
+        <h2 class="font-display text-2xl md:text-3xl font-semibold">New Arrivals</h2>
+      </div>
+    </div>
+    <div id="new-arrivals-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
+  </section>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer style="border-top:1px solid var(--color-line);">
+  <div class="container-page py-12 grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+    <div>
+      <a href="index.html" class="flex items-center gap-2.5 mb-3">
+        <img src="assets/images/brand/logo.svg" alt="ThermalWear logo" width="28" height="28">
+        <span class="font-display font-semibold">ThermalWear</span>
+      </a>
+      <p class="text-muted text-sm">Heated massage wearables for everyday comfort.</p>
+    </div>
+    <div>
+      <h4 class="font-display text-sm font-semibold mb-3">Shop</h4>
+      <ul class="space-y-2 text-sm text-muted">
+        <li><a href="products.html?category=heated-belts" class="hover:accent">Heated Belts</a></li>
+        <li><a href="products.html?category=heated-socks" class="hover:accent">Heated Socks</a></li>
+        <li><a href="products.html?category=heated-gloves" class="hover:accent">Heated Gloves</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display text-sm font-semibold mb-3">Company</h4>
+      <ul class="space-y-2 text-sm text-muted">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="shipping.html">Shipping Policy</a></li>
+        <li><a href="return.html">Return &amp; Refund Policy</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-display text-sm font-semibold mb-3">Contact</h4>
+      <p class="text-muted text-sm">support@thermalwear-example.com</p>
+      <p class="text-muted text-sm mt-3">Mon–Fri, 9am–5pm (GMT)</p>
+    </div>
+  </div>
+  <div class="container-page py-6 text-xs text-muted" style="border-top:1px solid var(--color-line);">
+    © <span data-year></span> ThermalWear. All rights reserved. Product images shown are placeholders — replace with your Amazon listing photography.
+  </div>
+</footer>
+
+<!-- ============ Cookie consent banner ============ -->
+<div id="cookie-banner" class="hidden">
+  <div class="container-page py-4 flex flex-col sm:flex-row items-center gap-4">
+    <p class="text-sm text-muted flex-1">We use cookies to remember your browsing history and improve your experience. Read our <a href="privacy.html" class="accent underline">Privacy Policy</a>. We only start tracking after you accept.</p>
+    <div class="flex gap-3 flex-shrink-0">
+      <button id="cookie-decline" class="btn btn-outline text-sm">Decline</button>
+      <button id="cookie-accept" class="btn btn-primary text-sm">Accept</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/products.js"></script>
+<script>
+  // Simple hero carousel (native JS, no plugins)
+  (function () {
+    const track = document.getElementById("hero-track");
+    const dotsWrap = document.getElementById("hero-dots");
+    if (!track) return;
+    const slides = track.children.length;
+    let index = 0;
+    for (let i = 0; i < slides; i++) {
+      const dot = document.createElement("button");
+      dot.className = "carousel-dot" + (i === 0 ? " active" : "");
+      dot.setAttribute("aria-label", "Go to slide " + (i + 1));
+      dot.addEventListener("click", function () { goTo(i); });
+      dotsWrap.appendChild(dot);
+    }
+    function goTo(i) {
+      index = i;
+      track.style.transform = "translateX(-" + (i * 100) + "%)";
+      Array.from(dotsWrap.children).forEach(function (d, di) { d.classList.toggle("active", di === i); });
+    }
+    setInterval(function () { goTo((index + 1) % slides); }, 5500);
+  })();
+</script>
 </body>
 </html>
