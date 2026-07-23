@@ -27,6 +27,12 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           >
             Products
           </Link>
+          <Link
+            href="/admin/pages"
+            className={`text-sm px-3 py-2 rounded-sm ${pathname?.startsWith("/admin/pages") ? "bg-surface text-accent" : "text-muted hover:text-text"}`}
+          >
+            Site Pages
+          </Link>
           <Link href="/" target="_blank" className="text-sm px-3 py-2 rounded-sm text-muted hover:text-text">
             View storefront ↗
           </Link>

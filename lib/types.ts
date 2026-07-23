@@ -41,3 +41,20 @@ export const CATEGORIES = [
   { id: "heated-socks", name: "Heated Socks" },
   { id: "heated-gloves", name: "Heated Gloves" },
 ] as const;
+
+// Editable static-content pages (About, Contact intro, Shipping, Return,
+// Privacy). Mirrors the `pages` table in supabase/schema-pages.sql.
+export interface SitePage {
+  slug: string;
+  title: string;
+  content: string; // lightweight markdown — see PageContent component
+  updated_at: string;
+}
+
+export const PAGE_SLUGS = [
+  { slug: "about", label: "About Us" },
+  { slug: "contact", label: "Contact Us (intro text only)" },
+  { slug: "shipping", label: "Shipping Policy" },
+  { slug: "return", label: "Return & Refund Policy" },
+  { slug: "privacy", label: "Privacy Policy" },
+] as const;
