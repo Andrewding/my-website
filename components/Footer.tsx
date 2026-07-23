@@ -34,7 +34,7 @@ export default function Footer() {
         </div>
         <div>
           <h4 className="font-display text-sm font-semibold mb-3">Contact</h4>
-          <p className="text-muted text-sm">support@thermalwear-example.com</p>
+          <p className="text-muted text-sm">vip@comeawm.com</p>
         </div>
       </div>
       <div className="container-page py-6 text-xs text-muted border-t border-line">
