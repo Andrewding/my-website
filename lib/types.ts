@@ -58,3 +58,14 @@ export const PAGE_SLUGS = [
   { slug: "return", label: "Return & Refund Policy" },
   { slug: "privacy", label: "Privacy Policy" },
 ] as const;
+
+// Site-wide settings (currently just the homepage hero banner image).
+// Mirrors the single row (id = 1) in the `site_settings` table in
+// supabase/schema-settings.sql. hero_image is null until an admin
+// uploads one from /admin/settings — the homepage falls back to the
+// built-in /hero-1.svg in that case.
+export interface SiteSettings {
+  id: 1;
+  hero_image: string | null;
+  updated_at: string;
+}
