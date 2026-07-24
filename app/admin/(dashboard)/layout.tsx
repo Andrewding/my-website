@@ -17,7 +17,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     <div className="min-h-screen bg-bg text-text flex">
       <aside className="w-56 shrink-0 border-r border-line p-5 hidden sm:flex flex-col">
         <div className="flex items-center gap-2.5 mb-8">
-          <img src="/logo.svg" alt="ThermalWear logo" width={26} height={26} />
+          < img src="/logo.svg" alt="ThermalWear logo" width={26} height={26} />
           <span className="font-display font-semibold text-sm">Admin</span>
         </div>
         <nav className="flex flex-col gap-1 flex-1">
@@ -33,6 +33,12 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           >
             Site Pages
           </Link>
+          <Link
+            href="/admin/settings"
+            className={`text-sm px-3 py-2 rounded-sm ${pathname?.startsWith("/admin/settings") ? "bg-surface text-accent" : "text-muted hover:text-text"}`}
+          >
+            Site Settings
+          </Link>
           <Link href="/" target="_blank" className="text-sm px-3 py-2 rounded-sm text-muted hover:text-text">
             View storefront ↗
           </Link>
@@ -43,7 +49,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       </aside>
 
       <div className="flex-1 min-w-0">
-        {/* Mobile top bar (sidebar is desktop-only above for simplicity) */}
         <div className="sm:hidden flex items-center justify-between p-4 border-b border-line">
           <span className="font-display font-semibold text-sm">ThermalWear Admin</span>
           <button onClick={handleLogout} className="btn-ghost text-sm">Log out</button>
