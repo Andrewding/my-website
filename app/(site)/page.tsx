@@ -4,6 +4,7 @@ import type { Product } from "@/lib/types";
 import ProductCard from "@/components/ProductCard";
 import RecentlyViewedRail from "@/components/RecentlyViewedRail";
 import { CATEGORIES } from "@/lib/types";
+import { getSiteSettings } from "@/lib/settings";
 
 // Renders fresh on every request so newly published/edited products from the
 // admin back office show up immediately without a redeploy.
@@ -24,20 +25,28 @@ async function getHomepageProducts() {
 }
 
 export default async function HomePage() {
-  const { bestSellers, newArrivals } = await getHomepageProducts();
+  const [{ bestSellers, newArrivals }, settings] = await Promise.all([
+    getHomepageProducts(),
+    getSiteSettings(),
+  ]);
 
   return (
     <>
-      {/* Hero */}
+      {/* Hero — editable from /admin/settings; falls back to the built-in
+          /hero-1.svg until an admin uploads a real image. */}
       <section className="container-page pt-6 md:pt-10">
         <div className="surface overflow-hidden rounded-lg">
-          <img src="/hero-1.svg" alt="Warmth that moves with you" className="w-full block" />
+          <img
+            src={settings.hero_image || "/hero-1.svg"}
+            alt="Warmth that moves with you"
+            className="w-full block"
+          />
         </div>
       </section>
 
       {/* Category quick entry */}
       <section className="container-page py-14">
-        <p className="eyebrow mb-2">Shop by category</p>
+        <p className="eyebrow mb-2">Shop by category</p >
         <h2 className="font-display text-2xl md:text-3xl font-semibold mb-6">Find your warmth</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {CATEGORIES.map((c) => (
@@ -55,7 +64,7 @@ export default async function HomePage() {
       <section className="container-page py-10">
         <div className="flex items-end justify-between mb-6">
           <div>
-            <p className="eyebrow mb-2">Customer favorites</p>
+            <p className="eyebrow mb-2">Customer favorites</p >
             <h2 className="font-display text-2xl md:text-3xl font-semibold">Best-selling warmth</h2>
           </div>
           <Link href="/products" className="btn-outline text-sm hidden sm:inline-flex">
@@ -63,7 +72,7 @@ export default async function HomePage() {
           </Link>
         </div>
         {bestSellers.length === 0 ? (
-          <p className="text-muted text-sm">No products yet — add one from the admin back office at /admin.</p>
+          <p className="text-muted text-sm">No products yet — add one from the admin back office at /admin.</p >
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {bestSellers.map((p) => (
@@ -77,10 +86,10 @@ export default async function HomePage() {
 
       {/* New arrivals */}
       <section className="container-page py-14">
-        <p className="eyebrow mb-2">Just landed</p>
+        <p className="eyebrow mb-2">Just landed</p >
         <h2 className="font-display text-2xl md:text-3xl font-semibold mb-6">New Arrivals</h2>
         {newArrivals.length === 0 ? (
-          <p className="text-muted text-sm">Nothing here yet.</p>
+          <p className="text-muted text-sm">Nothing here yet.</p >
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {newArrivals.map((p) => (
